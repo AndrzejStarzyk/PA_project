@@ -727,3 +727,447 @@ def executeCommands():
 	bpy.data.objects["Meteor"].(null) = 1
 	bpy.ops.ptcache.bake(bake=True)
 	bpy.ops.render.play_rendered_anim()
+	bpy.ops.mesh.primitive_ico_sphere_add(radius=1, enter_editmode=False, align='WORLD', location=(0, 0, 0), scale=(1, 1, 1))
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Icosphere']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Icosphere']
+	bpy.ops.material.new()
+	bpy.context.object.active_material = bpy.data.materials[-1]
+	bpy.context.object.active_material.use_nodes = False
+	bpy.context.object.active_material.use_nodes = True
+	bpy.ops.texture.new()
+	bpy.data.textures["MeteorTexture"].name = "MeteorTexture"
+	bpy.data.textures["MeteorTexture"].type = 'VORONOI'
+	bpy.ops.object.delete(use_global=False, confirm=False)
+	bpy.ops.object.delete(use_global=False, confirm=False)
+	bpy.ops.mesh.primitive_ico_sphere_add(enter_editmode=False, align='WORLD', location=(0, 0, 0), scale=(1, 1, 1))
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Icosphere']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Icosphere']
+	bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=5, enter_editmode=False, align='WORLD', location=(0, 0, 0), scale=(1, 1, 1))
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Icosphere']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Icosphere']
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Icosphere']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Icosphere']
+	bpy.data.textures["MeteorTexture"].minkovsky_exponent = 2.5
+	bpy.data.textures["MeteorTexture"].noise_intensity = 3.8
+	bpy.data.textures["MeteorTexture"].noise_intensity = 2
+	bpy.data.textures["MeteorTexture"].nabla = 0.1
+	bpy.ops.transform.translate(value=(0.0280628, 0.400377, 0.273264), orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, cursor_transform=True, release_confirm=True)
+	bpy.ops.transform.translate(value=(-0.457868, -0.467903, 0.461345), orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=False, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, alt_navigation=True)
+	bpy.ops.mesh.primitive_cube_add(size=2, enter_editmode=False, location=(3.48537, -2.7766, 1.52164), rotation=(1.47697, -0.0675133, 0.948828), scale=(0.486931, 0.579721, 3.62748))
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Cube']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Cube']
+	bpy.ops.material.new()
+	bpy.context.object.active_material = bpy.data.materials[-1]
+	bpy.context.scene.eevee.use_motion_blur = True
+	bpy.context.scene.eevee.use_bloom = True
+	bpy.ops.object.modifier_add(type='MESH_DEFORM')
+	bpy.context.object.modifiers["MeshDeform"].object = None
+	bpy.context.object.modifiers["MeshDeform"].object = None
+	bpy.context.object.modifiers["MeshDeform"].object = None
+	bpy.ops.object.modifier_add(type='REMESH')
+	bpy.ops.object.modifier_remove(modifier="MeshDeform")
+	bpy.context.object.modifiers["Remesh"].name = "Remesh"
+	bpy.context.object.modifiers["Remesh"].voxel_size = 0.139097
+	bpy.ops.object.modifier_add(type='DISPLACE')
+	bpy.context.object.modifiers["Displace"].strength = 2.7
+	bpy.context.object.modifiers["Displace"].mid_level = 0.626866
+	bpy.ops.object.modifier_remove(modifier="Displace")
+	bpy.context.object.modifiers["Remesh"].adaptivity = 0.01
+	bpy.context.object.modifiers["Remesh"].voxel_size = 0.132313
+	bpy.ops.object.camera_add(enter_editmode=False, align='VIEW', location=(0.723725, -0.311539, 0.366194), rotation=(1.10871, 0.013265, 1.14827), scale=(1, 1, 1))
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Camera']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Camera']
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Icosphere']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Icosphere']
+	bpy.ops.object.modifier_remove(modifier="Remesh")
+	bpy.ops.object.modifier_add(type='REMESH')
+	bpy.context.object.modifiers["Remesh"].voxel_size = 0.42207
+	bpy.ops.object.modifier_set_active(modifier="Remesh")
+	bpy.context.object.modifiers["Remesh"].adaptivity = 0.38
+	bpy.context.object.modifiers["Remesh"].mode = 'BLOCKS'
+	bpy.context.object.modifiers["Remesh"].mode = 'SMOOTH'
+	bpy.context.object.modifiers["Remesh"].mode = 'SMOOTH'
+	bpy.context.object.modifiers["Remesh"].mode = 'SHARP'
+	bpy.ops.object.modifier_remove(modifier="Remesh")
+	bpy.ops.object.modifier_add(type='CAST')
+	bpy.context.object.modifiers["Cast"].factor = -3.23134
+	bpy.context.object.modifiers["Cast"].radius = 0.17
+	bpy.ops.object.modifier_remove(modifier="Cast")
+	bpy.ops.object.modifier_add(type='DISPLACE')
+	bpy.context.object.modifiers["Displace"].strength = 1.9
+	bpy.ops.object.modifier_remove(modifier="Displace")
+	bpy.ops.object.modifier_add(type='LATTICE')
+	bpy.ops.object.modifier_remove(modifier="Lattice")
+	bpy.ops.object.modifier_add(type='SIMPLE_DEFORM')
+	bpy.context.object.modifiers["SimpleDeform"].angle = 0.47822
+	bpy.context.object.modifiers["SimpleDeform"].deform_method = 'BEND'
+	bpy.context.object.modifiers["SimpleDeform"].angle = 2.15374
+	bpy.ops.object.modifier_remove(modifier="SimpleDeform")
+	bpy.ops.object.modifier_add(type='BOOLEAN')
+	bpy.ops.object.modifier_remove(modifier="Boolean")
+	bpy.ops.object.modifier_add(type='EXPLODE')
+	bpy.ops.object.modifier_add(type='LAPLACIANDEFORM')
+	bpy.ops.object.modifier_remove(modifier="Explode")
+	bpy.context.object.modifiers["LaplacianDeform"].iterations = 1
+	bpy.ops.object.modifier_remove(modifier="LaplacianDeform")
+	bpy.ops.object.modifier_add(type='DECIMATE')
+	bpy.context.object.modifiers["Decimate"].symmetry_axis = 'Y'
+	bpy.context.object.modifiers["Decimate"].symmetry_axis = 'X'
+	bpy.context.object.modifiers["Decimate"].ratio = 1
+	bpy.ops.object.modifier_remove(modifier="Decimate")
+	bpy.ops.object.modifier_add(type='HOOK')
+	bpy.ops.object.modifier_remove(modifier="Hook")
+	bpy.ops.object.modifier_add(type='SURFACE_DEFORM')
+	bpy.context.object.modifiers["SurfaceDeform"].falloff = 2
+	bpy.context.object.modifiers["SurfaceDeform"].strength = -4.4
+	bpy.ops.object.modifier_remove(modifier="SurfaceDeform")
+	bpy.ops.object.modifier_add(type='WARP')
+	bpy.context.object.modifiers["Warp"].strength = -9.7
+	bpy.ops.object.modifier_remove(modifier="Warp")
+	bpy.ops.object.modifier_add(type='NORMAL_EDIT')
+	bpy.ops.object.modifier_remove(modifier="NormalEdit")
+	bpy.ops.object.particle_system_add()
+	bpy.data.objects["Icosphere"].(null) = 0
+	bpy.context.object.particle_systems["TailParticles"].name = "TailParticles"
+	bpy.ops.mesh.primitive_cube_add(enter_editmode=False, align='WORLD', location=(0.723725, -0.311539, 0.366194), scale=(1, 1, 1))
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Cube']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Cube']
+	bpy.ops.transform.translate(value=(5.02683, 6.75302, -3.7548), orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=False, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, alt_navigation=True)
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Cube']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Cube']
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Cube']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Cube']
+	bpy.ops.outliner.item_rename()
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Icosphere']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Icosphere']
+	bpy.data.particles["ParticleSettings"].count = 20000
+	bpy.data.particles["ParticleSettings"].render_type = 'OBJECT'
+	bpy.data.particles["ParticleSettings"].instance_object = None
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['TailPraticlesMesh']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['TailPraticlesMesh']
+	bpy.ops.outliner.item_rename()
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['TailPraticlesOject']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['TailPraticlesOject']
+	bpy.ops.outliner.item_rename()
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Icosphere']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Icosphere']
+	bpy.data.particles["ParticleSettings"].size_random = 0
+	bpy.data.particles["ParticleSettings"].particle_size = 0.02
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['TailPraticlesObject']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['TailPraticlesObject']
+	bpy.ops.mesh.primitive_cube_add(enter_editmode=False, align='WORLD', location=(0.723725, -0.311539, 0.366194), scale=(1, 1, 1))
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Cube']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Cube']
+	bpy.ops.transform.translate(value=(4.70689, 4.19928, -5.23888), orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=False, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, alt_navigation=True)
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Cube']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Cube']
+	bpy.ops.outliner.item_rename()
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['TailPraticlesObject']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['TailPraticlesObject']
+	bpy.ops.outliner.item_rename()
+	bpy.ops.material.new()
+	bpy.context.object.active_material = bpy.data.materials[-1]
+	bpy.context.object.active_material_index = 0
+	bpy.context.object.active_material.name = "TailParticleMaterial"
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['FrontParticleObject']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['FrontParticleObject']
+	bpy.ops.material.new()
+	bpy.context.object.active_material = bpy.data.materials[-1]
+	bpy.context.object.active_material_index = 0
+	bpy.context.object.active_material.name = "FrontParticleMaterial"
+	bpy.data.materials["FrontParticleMaterial"].node_tree.nodes["Emission"].inputs[0].default_value = (1, 0.123293, 0.0795421, 1)
+	bpy.data.materials["FrontParticleMaterial"].node_tree.nodes["Emission"].inputs[0].default_value = (1, 0.123293, 0.0795421, 1)
+	bpy.data.materials["FrontParticleMaterial"].node_tree.nodes["Emission"].inputs[1].default_value = 1
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['TailPraticlesObject']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['TailPraticlesObject']
+	bpy.data.materials["TailParticleMaterial"].node_tree.nodes["Emission"].inputs[0].default_value = (1, 0.521756, 0.0817317, 1)
+	bpy.data.materials["TailParticleMaterial"].node_tree.nodes["Emission"].inputs[0].default_value = (1, 0.521756, 0.0817317, 1)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Icosphere']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Icosphere']
+	bpy.data.particles["ParticleSettings"].object_align_factor[2] = 2
+	bpy.data.particles["ParticleSettings"].object_align_factor[0] = -20
+	bpy.data.particles["ParticleSettings"].object_align_factor[2] = 5
+	bpy.data.particles["ParticleSettings"].object_align_factor[2] = 20
+	bpy.data.particles["ParticleSettings"].object_align_factor[2] = 15
+	bpy.data.particles["ParticleSettings"].brownian_factor = 0
+	bpy.data.particles["ParticleSettings"].brownian_factor = 0.58
+	bpy.data.particles["ParticleSettings"].particle_size = 0.05
+	bpy.data.particles["ParticleSettings"].particle_size = 0.03
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['TailPraticlesObject']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['TailPraticlesObject']
+	bpy.data.materials["TailParticleMaterial"].node_tree.nodes["Emission"].inputs[1].default_value = 1
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['FrontParticleObject']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['FrontParticleObject']
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['TailPraticlesObject']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['TailPraticlesObject']
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['FrontParticleObject']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['FrontParticleObject']
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Icosphere']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Icosphere']
+	bpy.data.particles["ParticleSettings"].frame_end = 250
+	bpy.data.particles["ParticleSettings"].normal_factor = 2
+	bpy.data.particles["ParticleSettings"].normal_factor = 0.1
+	bpy.data.particles["ParticleSettings"].tangent_factor = 3
+	bpy.data.particles["ParticleSettings"].tangent_factor = -3
+	bpy.data.particles["ParticleSettings"].tangent_factor = 0
+	bpy.data.particles["ParticleSettings"].tangent_factor = -0.5
+	bpy.data.particles["ParticleSettings"].object_factor = 0
+	bpy.data.particles["ParticleSettings"].factor_random = 0
+	bpy.data.particles["ParticleSettings"].factor_random = 5
+	bpy.ops.object.particle_system_add()
+	bpy.data.objects["Icosphere"].(null) = 1
+	bpy.context.object.particle_systems["TailParticles2"].name = "TailParticles2"
+	bpy.data.particles["ParticleSettings.001"].render_type = 'OBJECT'
+	bpy.data.particles["ParticleSettings.001"].instance_object = None
+	bpy.data.particles["ParticleSettings.001"].particle_size = 0.03
+	bpy.data.particles["ParticleSettings.001"].object_align_factor[0] = 20
+	bpy.data.particles["ParticleSettings.001"].object_align_factor[2] = -6
+	bpy.data.particles["ParticleSettings.001"].object_align_factor[0] = -20
+	bpy.data.particles["ParticleSettings.001"].object_align_factor[2] = 5
+	bpy.context.object.particle_systems["TailParticles2"].seed = 0
+	bpy.data.particles["ParticleSettings.001"].count = 20000
+	bpy.data.particles["ParticleSettings.001"].factor_random = 5
+	bpy.data.objects["Icosphere"].(null) = 0
+	bpy.data.objects["Icosphere"].(null) = 1
+	bpy.data.particles["ParticleSettings.001"].object_align_factor[2] = 15
+	bpy.ops.object.particle_system_add()
+	bpy.data.objects["Icosphere"].(null) = 2
+	bpy.context.object.particle_systems["FrontParticles"].name = "FrontParticles"
+	bpy.data.particles["ParticleSettings.002"].render_type = 'OBJECT'
+	bpy.data.particles["ParticleSettings.002"].instance_object = None
+	bpy.data.particles["ParticleSettings.002"].instance_object = None
+	bpy.data.particles["ParticleSettings.002"].instance_object = None
+	bpy.data.particles["ParticleSettings.002"].lifetime = 5
+	bpy.data.particles["ParticleSettings.002"].count = 10000
+	bpy.ops.curve.primitive_nurbs_path_add(radius=1, enter_editmode=False, align='WORLD', location=(0.723725, -0.311539, 0.366194), scale=(1, 1, 1))
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['NurbsPath']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['NurbsPath']
+	bpy.ops.object.editmode_toggle()
+	bpy.ops.transform.translate(value=(1.66046, 1.75608, 0.865916), orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=False, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, alt_navigation=True)
+	bpy.ops.transform.translate(value=(-8.68764, -3.12584, 2.59544), orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=False, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, alt_navigation=True)
+	bpy.ops.transform.translate(value=(4.96098, 0.764297, -1.04433), orient_type='GLOBAL', orient_matrix=((1, 0, 0), (0, 1, 0), (0, 0, 1)), orient_matrix_type='GLOBAL', mirror=False, use_proportional_edit=False, proportional_edit_falloff='SMOOTH', proportional_size=1, use_proportional_connected=False, use_proportional_projected=False, snap=False, snap_elements={'INCREMENT'}, use_snap_project=False, snap_target='CLOSEST', use_snap_self=True, use_snap_edit=True, use_snap_nonedit=True, use_snap_selectable=False, alt_navigation=True)
+	bpy.ops.object.editmode_toggle()
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Icosphere']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Icosphere']
+	bpy.ops.object.constraint_add(type='FOLLOW_PATH')
+	bpy.context.object.constraints["Follow Path"].target = None
+	bpy.ops.constraint.followpath_path_animate(constraint="Follow Path", owner='OBJECT')
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['NurbsPath']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['NurbsPath']
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Icosphere']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Icosphere']
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	bpy.ops.outliner.item_rename()
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Icosphere']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Icosphere']
+	bpy.context.object.constraints["Follow Path"].forward_axis = 'FORWARD_Z'
+	bpy.context.object.constraints["Follow Path"].forward_axis = 'FORWARD_X'
+	bpy.context.object.constraints["Follow Path"].forward_axis = 'FORWARD_Y'
+	bpy.context.object.constraints["Follow Path"].use_curve_follow = True
+	bpy.context.object.constraints["Follow Path"].use_curve_follow = False
+	bpy.context.object.constraints["Follow Path"].influence = 1
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['NurbsPath']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['NurbsPath']
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['FrontParticleObject']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['FrontParticleObject']
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Meteor']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Meteor']
+	bpy.context.object.constraints["Follow Path"].offset = 0
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['NurbsPath']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['NurbsPath']
+	bpy.ops.object.editmode_toggle()
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['NurbsPath']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['NurbsPath']
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	bpy.ops.outliner.item_rename()
+	bpy.ops.object.editmode_toggle()
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['NurbsPath']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['NurbsPath']
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Meteor']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Meteor']
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Meteor']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Meteor']
+	bpy.data.objects["Meteor"].(null) = 'KEYS_SELECTED'
+	bpy.data.objects["Meteor"].(null) = 0
+	bpy.data.objects["Meteor"].(null) = 'KEYS_ALL'
+	bpy.data.objects["Meteor"].(null) = 'SCENE'
+	bpy.data.objects["Meteor"].(null) = 1
+	bpy.data.objects["Meteor"].(null) = 250
+	bpy.ops.object.forcefield_toggle()
+	bpy.context.object.constraints["Follow Path"].name = "Follow Path"
+	bpy.context.object.constraints["Follow Path"].influence = 1
+	bpy.context.object.constraints["Follow Path"].influence = 1
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['NurbsPath']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['NurbsPath']
+	bpy.context.object.data.eval_time = 250
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['NurbsPath']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['NurbsPath']
+	bpy.context.object.data.path_duration = 250
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Meteor']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Meteor']
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Meteor']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Meteor']
+	bpy.data.particles["ParticleSettings.002"].object_align_factor[0] = 3
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Meteor']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Meteor']
+	bpy.ops.object.modifier_add(type='DISPLACE')
+	bpy.ops.texture.new()
+	bpy.context.object.modifiers["Displace"].strength = 2
+	bpy.data.textures["Texture"].name = "Texture"
+	bpy.ops.object.modifier_set_active(modifier="Displace")
+	bpy.context.object.modifiers["Displace"].strength = 2
+	bpy.context.object.modifiers["Displace"].strength = -0.5
+	bpy.context.object.modifiers["Displace"].texture_coords = 'OBJECT'
+	bpy.context.object.modifiers["Displace"].strength = 1.6
+	bpy.context.object.modifiers["Displace"].direction = 'Y'
+	bpy.context.object.modifiers["Displace"].strength = 0.4
+	bpy.context.object.modifiers["Displace"].direction = 'NORMAL'
+	bpy.ops.object.modifier_set_active(modifier="Displace")
+	bpy.data.textures["Texture"].name = "Texture"
+	bpy.context.object.modifiers["Displace"].texture_coords = 'GLOBAL'
+	bpy.context.object.modifiers["Displace"].strength = 3.6
+	bpy.context.object.modifiers["Displace"].name = "Displace"
+	bpy.ops.object.modifier_set_active(modifier="Displace")
+	bpy.context.object.modifiers["Displace"].texture_coords = 'UV'
+	bpy.context.object.modifiers["Displace"].texture_coords = 'GLOBAL'
+	bpy.data.textures["Texture"].name = "Texture"
+	bpy.context.object.modifiers["Displace"].texture_coords = 'LOCAL'
+	bpy.context.object.modifiers["Displace"].strength = 3.5
+	bpy.context.object.modifiers["Displace"].mid_level = 0.425373
+	bpy.ops.object.modifier_set_active(modifier="Displace")
+	bpy.data.materials["Material.001"].node_tree.nodes["Emission"].inputs[0].default_value = (1, 0.278995, 0.26519, 1)
+	bpy.data.materials["Material.001"].node_tree.nodes["Emission"].inputs[0].default_value = (1, 0.278995, 0.26519, 1)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['NurbsPath']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['NurbsPath']
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['FrontParticleObject']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['FrontParticleObject']
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Meteor']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Meteor']
+	bpy.ops.object.modifier_remove(modifier="Displace")
+	bpy.data.particles["ParticleSettings.002"].lifetime_random = 0
+	bpy.data.particles["ParticleSettings.002"].object_factor = 2
+	bpy.data.particles["ParticleSettings.002"].frame_end = 250
+	bpy.data.particles["ParticleSettings.002"].drag_factor = 1
+	bpy.data.particles["ParticleSettings.002"].object_factor = -2
+	bpy.data.particles["ParticleSettings.002"].drag_factor = 1
+	bpy.data.particles["ParticleSettings.002"].brownian_factor = 10
+	bpy.data.particles["ParticleSettings.002"].brownian_factor = 0
+	bpy.data.particles["ParticleSettings.002"].drag_factor = 0
+	bpy.data.particles["ParticleSettings.002"].integrator = 'EULER'
+	bpy.data.particles["ParticleSettings.002"].integrator = 'MIDPOINT'
+	bpy.data.particles["ParticleSettings.002"].use_size_deflect = True
+	bpy.data.particles["ParticleSettings.002"].use_size_deflect = False
+	bpy.data.particles["ParticleSettings.002"].timestep = 0.01
+	bpy.data.particles["ParticleSettings.002"].integrator = 'EULER'
+	bpy.data.particles["ParticleSettings.002"].subframes = 0
+	bpy.data.particles["ParticleSettings.002"].timestep = 0.01
+	bpy.data.particles["ParticleSettings.002"].damping = 0
+	bpy.data.particles["ParticleSettings.002"].drag_factor = 0
+	bpy.data.particles["ParticleSettings.002"].brownian_factor = 0
+	bpy.data.objects["Meteor"].(null) = 2
+	bpy.data.particles["ParticleSettings.002"].type = 'HAIR'
+	bpy.data.particles["ParticleSettings.002"].type = 'EMITTER'
+	bpy.data.particles["ParticleSettings.002"].userjit = 39
+	bpy.data.particles["ParticleSettings.002"].userjit = 0
+	bpy.data.particles["ParticleSettings.002"].jitter_factor = 1.66667
+	bpy.data.particles["ParticleSettings.002"].jitter_factor = 1
+	bpy.data.particles["ParticleSettings.002"].emit_from = 'FACE'
+	bpy.data.particles["ParticleSettings.002"].use_modifier_stack = True
+	bpy.data.particles["ParticleSettings.002"].use_modifier_stack = False
+	bpy.data.particles["ParticleSettings.002"].emit_from = 'VERT'
+	bpy.data.particles["ParticleSettings.002"].emit_from = 'FACE'
+	bpy.data.particles["ParticleSettings.002"].emit_from = 'VOLUME'
+	bpy.data.particles["ParticleSettings.002"].emit_from = 'VERT'
+	bpy.data.particles["ParticleSettings.002"].emit_from = 'FACE'
+	bpy.data.particles["ParticleSettings.002"].distribution = 'GRID'
+	bpy.data.particles["ParticleSettings.002"].distribution = 'JIT'
+	bpy.data.particles["ParticleSettings.002"].use_emit_random = False
+	bpy.data.particles["ParticleSettings.002"].use_even_distribution = False
+	bpy.data.particles["ParticleSettings.002"].use_emit_random = True
+	bpy.data.particles["ParticleSettings.002"].use_even_distribution = True
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['NurbsPath']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['NurbsPath']
+	bpy.ops.outliner.item_activate(deselect_all=True)
+	[obj.select_set(False) for obj in bpy.context.view_layer.objects.selected.values()]
+	[bpy.context.view_layer.objects.get(obj).select_set(True) for obj in ['Meteor']]
+	bpy.context.view_layer.objects.active = bpy.data.objects['Meteor']
+	bpy.context.object.constraints["Follow Path"].offset = 0.7
+	bpy.context.object.constraints["Follow Path"].offset = 5.4
